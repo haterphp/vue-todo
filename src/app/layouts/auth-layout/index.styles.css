@@ -1,0 +1,23 @@
+.layout_auth {
+    @apply h-screen flex items-center justify-center bg-slate-200; 
+}
+
+.container {
+    @apply px-5 py-7 mx-5 max-w-[450px] rounded shadow bg-white
+}
+
+.container__logo {
+    @apply text-slate-800 font-medium tracking-wide text-sm uppercase mb-2;
+}
+
+.container__logo span {
+    @apply text-blue-500;
+}
+
+.container__text {
+    @apply text-2xl text-slate-800 mb-3;
+}
+
+.container__form {
+    @apply mb-3;
+}
