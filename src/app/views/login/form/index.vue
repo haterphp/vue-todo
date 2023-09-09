@@ -2,10 +2,19 @@
 
 <template>
     <form class="login-form" @submit="handleOnSubmit">
-        <FormProvider :state-manager="manager">
-            <FormInput name="email" />
-        </FormProvider>
+        <div class="flex flex-col gap-2">
+            <FormProvider :state-manager="manager">
+                <FormInput label="Email" name="email" />
+                <FormInput type="password" label="Пароль" name="password" />
+            </FormProvider>
+        </div>
 
-        <button type='submit' class="py-2 px-5 rounded-lg bg-slate-500 text-white mt-3">Войти</button>
+        <button 
+            type='submit' 
+            class="mt-5 w-full" 
+            v-button="{ color: 'primary' }"
+        >
+            Войти
+        </button>
     </form>
 </template>

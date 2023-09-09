@@ -1,24 +1,30 @@
 import { defineAsyncComponent, defineComponent } from "vue";
 
-import { FormStateManager } from "@app/tools/form/form-state";
+import { FormStateManager } from "@app/ui/form/form-state";
+
+interface IFormBody {
+    email: string
+    password: string
+}
 
 export default defineComponent({
     data() {
         return {
-            manager: new FormStateManager()
+            manager: new FormStateManager<IFormBody>()
         }
     },
     components: {
         FormProvider: defineAsyncComponent(
-            () => import('@app/tools/form/provider/index.vue')
+            () => import('@app/ui/form/provider/index.vue')
         ),
         FormInput: defineAsyncComponent(
-            () => import('@app/tools/form/components/input/index.vue')
+            () => import('@app/ui/form/components/input/index.vue')
         )
     },
     methods: {
         handleOnSubmit(e: Event) {
             e.preventDefault()
+            this.manager.clearErrors()
             console.log('data', this.manager.getValues())
         }
     }

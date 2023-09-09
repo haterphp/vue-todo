@@ -21,6 +21,26 @@ class FormStateManager<TFields extends Record<string, any>> implements IFormStat
     public setValue(key: keyof TFields, value: any): void {
         this._values[key] = value
     }
+
+    public clearErrors(): void {
+        this._errors = {}
+    }
+
+    public setError(key: keyof TFields, value: string): void {
+        this._errors[key] = { message: value }
+    }
+
+    public hasError(key: keyof TFields): boolean {
+        return !!this._errors[key]
+    }
+
+    public getError(key: keyof TFields): IFormStateError | undefined {
+        return this._errors[key]
+    }
+
+    public getErrors(): Partial<Record<keyof TFields, IFormStateError>> {
+        return this._errors
+    }
 }
 
 export { FormStateManager }

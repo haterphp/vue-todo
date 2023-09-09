@@ -1,0 +1,47 @@
+/* Common styles */
+
+.input {
+    @apply flex flex-col gap-[3px] w-full;
+}
+
+.input__field {
+    @apply w-full px-3 py-2 
+    rounded transition-colors 
+    outline-none
+    border border-slate-300 
+    hover:border-blue-300 text-slate-800;
+}
+
+.input__label {
+    @apply transition-colors text-sm text-slate-800;
+}
+
+.input__feedback {
+    @apply transition-colors text-sm text-slate-800;
+}
+
+
+/* Focused styles */
+
+.input.focused .input__field {
+    @apply border-blue-500 bg-blue-100;
+}
+
+.input.focused .input__label {
+    @apply text-blue-500;
+}
+
+
+/* Failed styles */
+
+.input.failed .input__field {
+    @apply border-red-500 bg-red-100;
+}
+
+.input.failed .input__label {
+    @apply text-red-500;
+}
+
+.input.failed .input__feedback {
+    @apply text-red-500;
+}
