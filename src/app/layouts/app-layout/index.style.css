@@ -1,0 +1,15 @@
+.page {
+    @apply 
+    h-screen
+    w-full
+    grid grid-cols-[minmax(320px,_400px)_minmax(700px,_1fr)]
+    overflow-hidden;
+}
+
+.drawer {
+    @apply bg-slate-100/20 border-r border-r-slate-300 h-full;
+}
+
+.container {
+    @apply h-full pl-10;
+}

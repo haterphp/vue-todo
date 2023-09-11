@@ -14,4 +14,4 @@
     </div>
 </template>
 
-<style src="./index.styles.css" />
+<style src="./index.styles.css" scoped />

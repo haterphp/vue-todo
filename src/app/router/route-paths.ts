@@ -1,5 +1,8 @@
 enum RoutePaths {
-    LOGIN = '/'
+    LOGIN = '/',
+
+    // Task routes
+    TASK_VIEW = '/app/task/:id'
 }
 
 export { RoutePaths }

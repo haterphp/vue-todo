@@ -1,5 +1,11 @@
 @import url('./button/index.styles.css');
 
+@layer base {
+    html {
+      @apply text-slate-800;
+    } 
+  }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

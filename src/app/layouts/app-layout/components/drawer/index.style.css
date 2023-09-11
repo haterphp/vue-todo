@@ -1,0 +1,35 @@
+.drawer__header {
+    @apply p-5 border-b border-b-slate-300;
+}
+
+.header__title {
+    @apply text-lg text-slate-800/80 hover:text-slate-800 transition-colors cursor-pointer;
+}
+
+.drawer__chapters {
+    @apply p-3;
+}
+
+.chapter {
+    @apply flex flex-col gap-2;
+}
+
+.chapter__header {
+    @apply flex 
+    items-center justify-between 
+    transition-colors
+    rounded
+    p-2;   
+}
+
+.chapter__title {
+    @apply font-semibold;
+}
+
+.chapter__content {
+    @apply flex flex-col gap-1;
+}
+
+.chapter__item {
+    @apply p-2 hover:bg-slate-100 transition-colors rounded cursor-pointer;
+}

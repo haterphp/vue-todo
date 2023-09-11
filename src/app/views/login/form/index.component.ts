@@ -26,6 +26,7 @@ export default defineComponent({
             e.preventDefault()
             this.manager.clearErrors()
             console.log('data', this.manager.getValues())
+            this.manager.setError('email', 'Some error')
         }
     }
 })
