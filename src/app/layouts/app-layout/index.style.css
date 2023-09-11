@@ -11,5 +11,5 @@
 }
 
 .container {
-    @apply h-full pl-10;
+    @apply h-full;
 }
