@@ -9,27 +9,3 @@
 .drawer__chapters {
     @apply p-3;
 }
-
-.chapter {
-    @apply flex flex-col;
-}
-
-.chapter__header {
-    @apply flex 
-    items-center justify-between 
-    transition-colors
-    rounded
-    p-2;   
-}
-
-.chapter__title {
-    @apply font-semibold;
-}
-
-.chapter__content {
-    @apply flex flex-col gap-1;
-}
-
-.chapter__item {
-    @apply py-2 px-5 hover:bg-slate-100 transition-colors rounded cursor-pointer;
-}

@@ -1,0 +1,23 @@
+.chapter {
+    @apply flex flex-col;
+}
+
+.chapter__header {
+    @apply flex 
+    items-center justify-between 
+    transition-colors
+    rounded
+    p-2 pb-0;   
+}
+
+.header__title {
+    @apply text-lg text-slate-800/80 hover:text-slate-800 transition-colors cursor-pointer;
+}
+
+.chapter__title {
+    @apply font-semibold text-slate-800;
+}
+
+.chapter__content {
+    @apply py-2;
+}
