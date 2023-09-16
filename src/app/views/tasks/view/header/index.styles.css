@@ -1,0 +1,8 @@
+.header {
+    @apply flex items-center justify-between
+    py-5 pr-10;
+}
+
+.header__title {
+    @apply text-2xl font-semibold;
+}

@@ -2,8 +2,8 @@
 
 <template>
     <div class="page">
-        <AppDrawer class="drawer" />
-        <div class="container">
+        <AppDrawer class="page__drawer" />
+        <div class="page__container">
             <router-view />
         </div>
     </div>

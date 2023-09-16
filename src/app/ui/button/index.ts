@@ -19,15 +19,12 @@ const SIZES_CLASSNAMES: Record<ButtonSizes, string | null> = {
 }
 
 export const ButtonDirective: DirectiveHook<HTMLButtonElement> = (el, props) => {
-    console.log(props)
     const { color, size = 'medium' } = props.value as IButtonDirectiveProps
     const {color: oldColor, size: oldSize} = (props.oldValue ?? {}) as IButtonDirectiveProps
 
     el.classList.remove('button')
     if (oldColor !== undefined) el.classList.remove(COLORS_CLASSNAMES[oldColor])
     if (oldSize !== undefined) el.classList.remove(SIZES_CLASSNAMES[oldSize] as string)
-
-    console.log(el.classList)
 
     const classnames = [
         'button', 

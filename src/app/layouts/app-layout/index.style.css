@@ -6,10 +6,10 @@
     overflow-hidden;
 }
 
-.drawer {
+.page__drawer {
     @apply bg-slate-50/40 border-r border-r-slate-300 h-full;
 }
 
-.container {
+.page__container {
     @apply h-full;
 }

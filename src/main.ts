@@ -6,7 +6,7 @@ import App from './app/index.vue'
 import router from './app/router'
 import { UIPlugin } from '@app/ui'
 
-import './fa-register'
+import './fa-icons-register'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 const app = createApp(App)

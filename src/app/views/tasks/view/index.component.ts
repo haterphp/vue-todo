@@ -1,3 +1,9 @@
-import { defineComponent } from "vue";
+import { defineAsyncComponent, defineComponent } from "vue";
 
-export default defineComponent({})
+export default defineComponent({
+    components: {
+        TasksHeader: defineAsyncComponent(
+            () => import('./header/index.vue')
+        )
+    }
+})
