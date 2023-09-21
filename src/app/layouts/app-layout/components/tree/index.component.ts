@@ -1,11 +1,13 @@
-import router from "@app/router";
-
 import { defineComponent, type PropType } from "vue";
+
+type TreeItemType = 'folder' | 'tasks' | 'document' | 'storage'
 
 interface ITreeProps {
     title: string
-    to?: string
+    type: TreeItemType
+    isActive?: boolean
     children?: ITreeProps[]
+    action?: () => void,
 }
 
 export type { ITreeProps }
@@ -21,8 +23,16 @@ export default defineComponent({
     },
 
     data() {
+        const variants: Record<TreeItemType, string[]> = {
+            folder: ['far', 'folder'],
+            tasks: ['fas', 'table-columns'],
+            document: ['far', 'file'],
+            storage: ['far', 'hard-drive'],
+        }
+
         return {
-            isOpen: false
+            isOpen: false,
+            variants 
         }
     },
 
@@ -30,24 +40,27 @@ export default defineComponent({
         title() {
             return this.$props.content.title
         },
+        isActive() {
+            return this.$props.content.isActive ?? false
+        },
         children() {
             return this.$props.content.children ?? []
         },
-        link() {
-            return this.$props.content.to
+        type() {
+            return this.$props.content.type
+        },
+        action() {
+            return this.$props.content.action
+        },
+        iconByType() {
+            return this.variants[this.type] ?? []
         }
     },
 
     methods: {
-        handleTooggleCollapse(e: MouseEvent) {
-            e.stopPropagation()
-            this.isOpen = !this.isOpen
-        },
-        handleItemClick(e: MouseEvent) {
-            if (this.link) {
-                router.push(this.link)
-                this.isOpen = true
-            } else this.handleTooggleCollapse(e)
+        handleItemClick() {
+           if (this.type === 'folder') this.isOpen = !this.isOpen
+           if (this.action !== undefined) this.action()
         }
     }
 })

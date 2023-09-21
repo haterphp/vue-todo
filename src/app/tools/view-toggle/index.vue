@@ -7,7 +7,7 @@
             @click="handleClick(Variants.BOARD)" 
             v-button="{ color: variant === Variants.BOARD ? 'primary' : 'secondary' }"
         >
-            <fa-icon icon="fa-solid fa-border-all" class="mr-2" />
+            <fa-icon icon="fa-solid fa-table-columns" class="mr-2" />
             Доска
         </button>
 

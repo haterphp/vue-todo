@@ -1,7 +1,10 @@
-import { defineAsyncComponent, defineComponent } from "vue";
-import type { ITreeProps } from "../../../tree/index.component";
+import { defineAsyncComponent, defineComponent, computed } from "vue";
+
 import { urlReplacer } from "@app/utils";
+
 import { RoutePaths } from "@app/router/route-paths";
+
+import type { ITreeProps } from "../../../tree/index.component";
 
 export default defineComponent({
 
@@ -9,11 +12,23 @@ export default defineComponent({
         return {
             treeContent: {
                 title: 'Project 1',
-                to: urlReplacer(RoutePaths.TASK_VIEW, { id: 'project-1' }),
+                type: 'folder',
                 children: [
-                    { title: "Project 1.1", to: urlReplacer(RoutePaths.TASK_VIEW, { id: 'project-1_1' }), },
-                    { title: "Project 1.2", children: [ {title: "Project 1.2.1"} ] },
-                    { title: "Project 1.3" },
+                    { 
+                        title: "Project 1.1", 
+                        type: 'tasks', 
+                        isActive: computed(() => this.$route.path === urlReplacer(RoutePaths.TASK_VIEW, { id: '456' })),
+                        action: () => this.$router.push(urlReplacer(RoutePaths.TASK_VIEW, { id: '456' }))
+                    },
+                    { 
+                        title: "Project 1.2",
+                        type: 'folder',
+                        children: [ { title: "Project 1.2.1", type: 'document'} ]
+                    },
+                    { 
+                        title: "Project 1.3",
+                        type: 'document'
+                    },
                 ]
             } as ITreeProps
         } 
