@@ -10,6 +10,7 @@ import {
     faCaretDown,
     faTableColumns,
     faBarsStaggered,
+    faMagnifyingGlass
 } from '@fortawesome/free-solid-svg-icons'
 
 /**
@@ -24,6 +25,7 @@ import {
 library.add(faCaretDown)
 library.add(faTableColumns)
 library.add(faBarsStaggered)
+library.add(faMagnifyingGlass)
 
 
 /**

@@ -5,6 +5,7 @@
         <h2 class="header__title">{{ prefix }}: {{ title }}</h2>
 
         <div class="header__toolbar">
+            <SearchCompnent />
             <ViewToggle />
         </div>
     </header>

@@ -4,7 +4,7 @@ import { urlReplacer } from "@app/utils";
 
 import { RoutePaths } from "@app/router/route-paths";
 
-import type { ITreeProps } from "../../../tree/index.component";
+import type { ITreeProps } from "@app/tools/tree/index.component";
 
 export default defineComponent({
 
@@ -36,10 +36,10 @@ export default defineComponent({
 
     components: {
         Chapter: defineAsyncComponent(
-            () => import('../../../chapter/index.vue')
+            () => import('@app/layouts/app-layout/components/chapter/index.vue')
         ),
         Tree: defineAsyncComponent(
-            () => import('../../../tree/index.vue')
+            () => import('@app/tools/tree/index.vue')
         )
     }
 })

@@ -6,3 +6,19 @@
 .header__title {
     @apply text-2xl font-semibold;
 }
+
+.header__toolbar {
+    @apply flex gap-6 items-stretch;
+}
+
+.header__toolbar > *:not(:last-of-type) {
+    @apply relative;
+}
+
+.header__toolbar > *:not(:last-of-type)::after {
+    content: "";
+    width: 1px;
+    height: 100%;
+
+    @apply absolute bg-slate-200 right-0 -mr-3;
+}

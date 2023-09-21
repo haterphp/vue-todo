@@ -25,6 +25,9 @@ export default defineComponent({
     components: {
         ViewToggle: defineAsyncComponent(
             () => import('@app/tools/view-toggle/index.vue')
-        )
+        ),
+        SearchCompnent: defineAsyncComponent(
+            () => import('@app/tools/search/index.vue')
+        ),
     }
 })
